@@ -26,13 +26,12 @@ class Song
      return nil
    else
      return self.artist.name
+   end
  end
-
-
 end
 
 
-it 'knows the name of its artist' do
-  drake = Artist.new('Drake')
-  song.artist = drake
-  expect(song.artist_name).to eq('Drake')
+# it 'knows the name of its artist' do
+#   drake = Artist.new('Drake')
+#   song.artist = drake
+#   expect(song.artist_name).to eq('Drake')
