@@ -7,10 +7,18 @@ class Post
   def initialize(title)
     @title = title
     @posts = []
-    @author = ""
+    # @author = nil
     # require 'pry'; binding.pry
     @@all << self   #pushes itself into the post
   end
+  #
+  # def author=(author_instance)
+  # at author = author_instance
+  # end
+  #
+  # def author
+  #   at author
+  # end
 
   def self.all
     @@all    #is a class method that returns an array of all post instances
@@ -22,16 +30,17 @@ class Post
     @@post_count += 1
   end
 
- def posts
-   @posts = []
- end
+  def posts
+    @posts = []
+  end
 
   def author_name
-    if @author = self   #at author and self is matching
-    # binding.pry
-  else
-    name.author = nil
-    return nil
-  end
+    if self.author   #if author has a name return it.
+
+      self.author.name
+    else
+      # require 'pry';binding.pry
+      return nil
+    end
   end
 end
