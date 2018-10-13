@@ -22,7 +22,7 @@ class Song
  end
 
  def artist_name
-   if self.artist.name == ""    #self is a song, pool the artist name
+   if self.artist == ""    #self is a song, pool the artist name
      return nil
    else
      return self.artist.name

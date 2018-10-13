@@ -1,14 +1,37 @@
 class Post
-  attr_accessor :title, :post 
+
+  attr_accessor :title, :post, :author, :author_name, :posts
+  @@all = []
+  @@post_count = 0
+
   def initialize(title)
     @title = title
-    @@all << post
+    @posts = []
+    @author = ""
+    # require 'pry'; binding.pry
+    @@all << self   #pushes itself into the post
   end
 
-
-
-  def all
-    @all = all
+  def self.all
+    @@all    #is a class method that returns an array of all post instances
   end
 
+  def add_post(post)
+    post.author = self
+    @posts << post
+    @@post_count += 1
+  end
+
+ def posts
+   @posts = []
+ end
+
+  def author_name
+    if @author = self   #at author and self is matching
+    # binding.pry
+  else
+    name.author = nil
+    return nil
+  end
+  end
 end
